@@ -1,0 +1,52 @@
+@import 'hamburger.css';
+
+.sticky-menu {
+  transition: transform .4s ease, opacity .4s ease;
+  .menu-item {
+    list-style-type: none;
+  }
+
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.menu-toggle-btn {
+  display: none;
+  opacity: .5;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  z-index: 1000;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 12px 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  li {
+    margin-right: 25px;
+  }
+  a {
+    color: var(--text-color);
+    font-size: var(--accent-text-size);
+  }
+  a:hover {
+    color: var(--text-hover-color);
+  }
+  .menu-item-home a {
+    color: var(--primary-color) !important;
+    font-family: var(--header-font);
+    font-size: calc(var(--small-header-size) - .1rem);
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+  }
+}
+

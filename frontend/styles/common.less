@@ -1,0 +1,56 @@
+* {
+  transition: all .2s;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
+  color: var(--primary-hover-color);
+}
+.left {
+  float: left;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.grid-fix .post-item_grid:nth-child(odd) {
+  clear: left;
+}
+
+/* bootstrap bug - sometimes horizontal scroll appears on mobile devices if the content is too long */
+.container {
+  overflow-x: hidden;
+}
+time {
+  font-size: var(--accent-text-size);
+  color: var(--text-secondary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.container-fluid {
+  max-width: 1440px;
+}
+
+input[type="text"], input[type="search"] {
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 3px;
+  padding: 6px;
+}
+
+iframe {max-width: 100%;}
+.comments-list img {max-width: none;width: auto}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
