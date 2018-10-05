@@ -86,9 +86,6 @@ function uzel_add_assets() {
       'page_type' => $page_type
     ]);
   }
-  if(uzel_is_sidebar_active()) {
-    uzel_enqueue_script($assets_dir . 'sticky-sidebar.js');
-  }
 }
 add_action( 'wp_enqueue_scripts', 'uzel_add_assets' );
 
