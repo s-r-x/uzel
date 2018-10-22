@@ -1,3 +1,4 @@
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,11 +40,6 @@
 <?php if(get_theme_mod('show_slider', true) && is_front_page()):
   get_template_part('layouts/slider');
 ?>
-<?php
-elseif(has_header_image() && is_front_page()):?>
-<a href="<?php echo home_url( '/' );?>">
-<img class="header-image" src="<?php header_image();?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-</a>
 <?php endif; ?>
 </div>
 <div class="container">

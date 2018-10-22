@@ -20,3 +20,10 @@ export function startScrolling() {
   window.removeEventListener('DOMMouseScroll', prevent, false);
   window.onwheel = null;
 }
+
+export function isScrollBottom(offset = 2) {
+  if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - offset) {
+    return true;
+  }
+  return false;
+};

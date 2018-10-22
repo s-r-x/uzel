@@ -34,18 +34,16 @@
     margin-right: 25px;
   }
   a {
-    color: var(--text-color);
-    font-size: var(--accent-text-size);
+    color: @text-color;
+    font-size: @accent-text-size;
   }
   a:hover {
-    color: var(--text-hover-color);
+    color: @text-hover-color;
   }
   .menu-item-home a {
-    color: var(--primary-color) !important;
-    font-family: var(--header-font);
-    font-size: calc(var(--small-header-size) - .1rem);
+    font-family: @header-font;
+    font-size: @small-header-size - .1rem;
     &:hover {
-      color: var(--primary-hover-color);
     }
   }
 }

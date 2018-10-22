@@ -13,8 +13,8 @@ article.single-post, article.single-page {
     justify-content: space-between;
     margin-top: 20px;
     padding: 5px 0;
-    border-bottom: 1px dashed var(--border-color);
-    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed @border-color;
+    border-top: 1px dashed @border-color;
   }
   &-time {
     margin-bottom: 15px;
@@ -28,7 +28,7 @@ article.single-post, article.single-page {
     margin: 0;
   }
   .tags i {
-    color: var(--text-secondary-color);
+    color: @text-secondary-color;
   }
   .post-thumbnail {
     width: 100%;
@@ -37,11 +37,11 @@ article.single-post, article.single-page {
 }
 .single-post-category, .single-post-time {
   font-weight: 400;
-  font-size: var(--accent-text-size);
+  font-size: @accent-text-size;
 }
 .related-posts h3 {
-  font-size: var(--small-header-size);
-  color: var(--text-secondary-color);
+  font-size: @small-header-size;
+  color: @text-secondary-color;
   text-align: center;
   margin-top: 35px;
   margin-bottom: 10px;
@@ -58,7 +58,7 @@ article.single-post, article.single-page {
   color: inherit;
 }
 .related-post h2 {
-  font-size: var(--small-header-size);
+  font-size: @small-header-size;
 }
 .related-post time {
 }
@@ -69,8 +69,8 @@ article.single-post, article.single-page {
   margin-top: 60px;
 }
 .comments h3 {
-  font-size: var(--small-header-size);
-  color: var(--text-secondary-color);
+  font-size: @small-header-size;
+  color: @text-secondary-color;
   text-align: center;
 }
 .comments .comments-counter {
@@ -81,7 +81,7 @@ article.single-post, article.single-page {
 .comments-list {
   padding: 0;
   p, .comment-author, .comment-date {
-    font-size: var(--accent-text-size);
+    font-size: @accent-text-size;
   }
   img {
     max-width: none;width: auto
@@ -101,20 +101,17 @@ ul.children {
   margin-right: 10px;
 }
 .comment-date {
-  color: var(--text-secondary-color);
+  color: @text-secondary-color;
   font-size: 0.9rem;
 }
 
 .comment-reply-title {
-  font-size: var(--small-header-size);
+  font-size: @small-header-size;
   text-align: center;
-  color: var(--text-secondary-color);
+  color: @text-secondary-color;
 }
 .comment-notes {
   display: none;
-}
-.required {
-  color: var(--primary-color);
 }
 .comment-respond {
   margin-top: 60px;
@@ -129,7 +126,6 @@ ul.children {
   max-width: 300px;
   padding: 5px;
   font-size: 0.9rem;
-  outline-color: var(--primary-color);
 }
 .comment-respond input[type="submit"] {
   width: auto;
@@ -138,12 +134,8 @@ ul.children {
   display: inline-block;
   padding: 7px 22px;
   border-radius: 17.5px;
-  background-color: var(--primary-color);
   color: #fff;
   border: none;
-}
-.comment-respond .submit:hover {
-  background-color: var(--primary-hover-color);
 }
 .comment-form-url {
   display: none;

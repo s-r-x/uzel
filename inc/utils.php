@@ -12,7 +12,13 @@ function uzel_get_number_of_columns() {
 }
 
 function uzel_first_category_link($categories, $classes = '') {
-  echo '<a class="' . $classes . '" ' . 'href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+  if(empty($categories)) {
+    return;
+  }
+  $first_category = $categories[0];
+  $term_id = $first_category->term_id;
+  $name =  $first_category->name;
+  echo '<a class="' . $classes . '" ' . 'href="' . esc_url( get_category_link( $term_id ) ) . '">' . esc_html( $name ) . '</a>';
 }
 
 function uzel_enqueue_script($path, $before_body = true) {
@@ -35,13 +41,15 @@ function uzel_tags_list() {
   $tags = get_the_tags();
   if(!empty($tags)):
     $lis = array_map(function($tag) {
-      return '<li class="tag"><a href=' . get_tag_link($tag->term_id) . '>' .  $tag->name . '</a>' . '</li>';
+      $link = get_tag_link($tag->term_id);
+      $name = $tag->name;
+      return '<li class="tag"><a href=' . $link . '>' . $name . '</a>' . '</li>';
     }, $tags);
-    echo '<ul class="tags">';
-    echo '<i class="icon-tag"></i>';
-    echo join(', ', $lis);
-    echo '</ul>';
-    endif;
+  echo '<ul class="tags">';
+  echo '<i class="icon-tag"></i>';
+  echo join(', ', $lis);
+  echo '</ul>';
+endif;
 }
 
 function uzel_darken_color($hexcolor, $percent)

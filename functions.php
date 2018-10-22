@@ -6,8 +6,13 @@ include get_template_directory()."/inc/utils.php";
 if ( ! isset ( $content_width) ) $content_width = 1440; 
 // main setup
 function uzel_setup() {
+  // localization
+  load_theme_textdomain( 'uzelkovoye_pismo', get_template_directory() . '/languages' );
+
   // menu
   register_nav_menus( [ 'primary'   => 'Primary Menu' ] );
+
+  //thumbnails
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'post-formats',  array ('image', 'video' ) );
 }
@@ -62,12 +67,12 @@ function uzel_add_assets() {
   wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.2.3');
 
   //scripts
-  if(get_theme_mod('show_slider')) {
+  if(get_theme_mod('show_slider', true)) {
     wp_enqueue_script('slider', $assets_dir . 'slider.js', ['jquery'], '1.2.3', true);
   }
   uzel_enqueue_script($assets_dir . 'index.js');
 
-  // need to load post ajax loader only on pages that contain posts. such as tag archive etc
+  // need to load post ajax loader script only on pages that contains posts. such as tag archive etc
   $page_type = null;
   if(is_category()) $page_type = 'category';
   elseif(is_tag()) $page_type = 'tag';
@@ -75,7 +80,6 @@ function uzel_add_assets() {
   elseif(is_date()) $page_type = 'date';
   elseif(is_home()) $page_type = 'home';
   elseif(is_search()) $page_type = 'search';
-
   if($page_type) {
     global $wp_query;
     wp_enqueue_script('post-loader', $assets_dir . 'post-loader.js', ['jquery'], '1.2.3', true);
@@ -90,19 +94,44 @@ function uzel_add_assets() {
 add_action( 'wp_enqueue_scripts', 'uzel_add_assets' );
 
 
-//colors
-function uzel_add_colors() {
+//color styles
+function uzel_add_color_styles() {
   $primary = get_theme_mod('primary_color', '#DC8686');
+  $primary_hover = uzel_darken_color($primary, 0.1);
 ?>
 <style>
-:root {
-  --primary-color: <?php echo $primary; ?>;
-  --primary-hover-color: <?php echo uzel_darken_color($primary, 0.1);?>;
+.button, 
+.comment-respond .submit, 
+.loader,
+.bottom-footer {
+  background-color: <?php echo $primary; ?>;
+}
+.button:hover, 
+.comment-respond .submit:hover {
+  background-color: <?php echo $primary_hover; ?>;
+}
+a, 
+.required,
+.search-section .query-search,
+.post-category,
+.top-header h1,
+.error-page .error-code {
+  color: <?php echo $primary; ?>;
+}
+.menu-item-home a {
+  color: <?php echo $primary; ?> !important;
+}
+a:hover, 
+.menu-item-home a {
+  color: <?php echo $primary_hover; ?>;
+}
+.comment-respond input {
+outline-color: <?php echo $primary; ?>;
 }
 </style>
 <?php 
 }
-add_action('wp_head', 'uzel_add_colors');
+add_action('wp_head', 'uzel_add_color_styles');
 
 //fonts
 function uzel_add_fonts() {

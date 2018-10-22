@@ -13,7 +13,7 @@
   display: inline-block;
 }  
 .sidebar * {
-  font-size: var(--accent-text-size);
+  font-size: @accent-text-size;
 }
 .uzel-widget {
   text-align: left;
@@ -22,26 +22,26 @@
   padding: 0;
 }
 .sidebar h2 {
-  font-size: var(--small-header-size);
-  color: var(--text-secondary-color);
+  font-size: @small-header-size;
+  color: @text-secondary-color;
 }
 .sidebar ul {
   margin: 5px;
 }
 #wp-calendar {
   th {
-    color: var(--text-secondary-color);
+    color: @text-secondary-color;
   }
   th, td {
     padding: 4px; 
-    font-size: var(--accent-text-size);
+    font-size: @accent-text-size
   }
   caption {
     text-align: left;
-    font-family: var(--header-font);
+    font-family: @header-font;
     padding: 4px;
-    font-size: var(--small-header-size);
-    color: var(--text-secondary-color);
+    font-size: @small-header-size;
+    color: @text-secondary-color;
   }
 }
 .uzel-widget {

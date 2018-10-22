@@ -1,9 +1,5 @@
 .top-slider {
-  --header-font-size: 2.5rem;
-  --nav-size: 3rem;
-  --nav-color: rgba(255,255,255,.87);
-  --nav-hover-color: #fff;
-  --nav-margin: 15%;
+  @header-font-size: 2.5rem;
 }
 .slider-item img {
   max-width: 100%;
@@ -37,7 +33,7 @@
   text-align: center;
 }
 .info-category a {
-  font-size: var(--accent-text-size);
+  font-size: @accent-text-size;
 }
 .info-category a::before {
   content: '- '
@@ -51,12 +47,12 @@
 }
 .info-title {
   margin: 5px;
-  font-size: var(--header-font-size);
-  line-height: calc(var(--header-font-size) - 0.2rem);
+  font-size: @header-font-size;
+  line-height: @header-font-size - 0.2rem;
 }
 .info-date {
-  font-size: var(--accent-text-size);
-  color: var(--text-secondary-color);
+  font-size: @accent-text-size;
+  color: @text-secondary-color;
   margin-bottom: 20px;
 }
 
@@ -69,15 +65,15 @@
   outline: none;
 }
 .owl-prev i, .owl-next i {
-  color: var(--nav-color);
-  font-size: var(--nav-size);
+  color: rgba(255,255,255,.87);
+  font-size: 3rem;
 }
 .owl-prev {
-  left: var(--nav-margin);
+  left: 15%;
 }
 .owl-next {
-  right: var(--nav-margin);
+  right: 15%;
 }
 .owl-prev:hover i, .owl-next:hover i {
-  color: var(--nav-hover-color);
+  color: #fff;
 }

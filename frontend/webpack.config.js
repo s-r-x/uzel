@@ -13,39 +13,41 @@ let cleanWebpackConfig = {
 const OUTPUT_PATH = path.resolve(__dirname, "..", "assets");
 
 module.exports = {
-	entry: {
-		customizer: './scripts/customizer.js',
-		index: "./scripts/index.js",
+  entry: {
+    customizer: './scripts/customizer.js',
+    index: "./scripts/index.js",
     'post-loader': './scripts/post-loader.js',
     preloader: './scripts/preloader.js',
     slider: './scripts/slider.js',
-    'sticky-sidebar': './scripts/sticky-sidebar.js',
-
-	},
-	output: {
-		path: OUTPUT_PATH,
-		filename: "[name].js"
-	},
-	module: {
-		rules: [
+  },
+  output: {
+    path: OUTPUT_PATH,
+    filename: "[name].js"
+  },
+  module: {
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: [
+              ['@babel/preset-env', {
+                "useBuiltIns": "usage",
+              }]
+            ],
+          },
+        },
       },
-			{
-				test: /(\.css)|(\.less)$/,
-				use: [
-					{ loader: MiniCssExtractPlugin.loader },
-					"css-loader",
+      {
+        test: /(\.css)|(\.less)$/,
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          "css-loader",
+          "postcss-loader",
           'less-loader',
-					"postcss-loader"
-				]
+        ]
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|otf|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -79,8 +81,5 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  },
-  externals: {
-    jquery: 'jQuery'
   },
 };

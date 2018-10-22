@@ -1,21 +1,21 @@
-@import url('normalize.css');
-@import url('bootstrap.css');
-@import url('slider.less');
-@import url('fontello.css');
-@import url('typography.less');
-@import url('vars.less');
-@import url('components.less');
+@import 'normalize.css';
+@import 'bootstrap.css';
+@import 'slider.less';
+@import 'fontello.css';
+@import 'typography.less';
+@import 'vars.less';
+@import 'components.less';
 
-@import url('menu.less');
-@import url('posts.less');
-@import url('single_post.less');
-@import url('head.less');
-@import url('sidebar.less');
-@import url('404.less');
-@import url('footer.less');
+@import 'menu.less';
+@import 'posts.less';
+@import 'single_post.less';
+@import 'head.less';
+@import 'sidebar.less';
+@import '404.less';
+@import 'footer.less';
 
-@import url('common.less');
-@import url('media.less');
+@import 'common.less';
+@import 'media.less';
 
 
 .main-container {
@@ -26,7 +26,6 @@
   border-radius: 0;
 }
 .button:hover {
-  background-color: var(--primary-hover-color);
   color: #fff;
 }
 .searchform label {
@@ -43,7 +42,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
   z-index: 1001;
   opacity: 1;
   transition: opacity .45s ease;
@@ -53,8 +51,5 @@
   h1 {
     font-size: 1.3rem;
     text-align: center;
-  }
-  .query-search {
-    color: var(--primary-color);
   }
 }
