@@ -59,18 +59,17 @@ function uzel_sidebar_init() {
 }
 add_action('widgets_init', 'uzel_sidebar_init');
 
-// enqueue script is a simple wrapper around wp_enqueue_style. first arg - path to script, second - insert before body(default - true)
 function uzel_add_assets() {
+
+  wp_deregister_script('jquery');
 
   $assets_dir = get_template_directory_uri() . '/assets/';
   //styles
   wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.2.3');
 
+  wp_enqueue_script('index_js', $assets_dir . 'index.js', '1.2.3', true);
+
   //scripts
-  if(get_theme_mod('show_slider', true)) {
-    wp_enqueue_script('slider', $assets_dir . 'slider.js', ['jquery'], '1.2.3', true);
-  }
-  uzel_enqueue_script($assets_dir . 'index.js');
 
   // need to load post ajax loader script only on pages that contains posts. such as tag archive etc
   $page_type = null;
@@ -82,13 +81,16 @@ function uzel_add_assets() {
   elseif(is_search()) $page_type = 'search';
   if($page_type) {
     global $wp_query;
-    wp_enqueue_script('post-loader', $assets_dir . 'post-loader.js', ['jquery'], '1.2.3', true);
+    wp_enqueue_script('post-loader', $assets_dir . 'post-loader.js', [], '1.2.3', true);
     wp_localize_script('post-loader', '__ajax__', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'security' => wp_create_nonce('uzel-security'),
       'query_vars' => json_encode($wp_query->query),
       'page_type' => $page_type
     ]);
+  }
+  if(get_theme_mod('show_slider', true)) {
+    wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.3', true);
   }
 }
 add_action( 'wp_enqueue_scripts', 'uzel_add_assets' );

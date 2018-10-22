@@ -21,9 +21,6 @@ function uzel_first_category_link($categories, $classes = '') {
   echo '<a class="' . $classes . '" ' . 'href="' . esc_url( get_category_link( $term_id ) ) . '">' . esc_html( $name ) . '</a>';
 }
 
-function uzel_enqueue_script($path, $before_body = true) {
-  wp_enqueue_script(basename($path), $path, [], '1.2.3', $before_body);
-}
 function get_uzel_gplus_share_url($link) {
   echo 'https://plus.google.com/share?url=' . $link;
 }
