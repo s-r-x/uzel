@@ -64,7 +64,15 @@ function uzel_darken_color($hexcolor, $percent) {
   return '#' . implode($hexcolor);
 }
 
-function uzel_get_post_likes($post) {
-  $likes = get_post_meta($post->ID, 'likes', true);
-  return $likes ? $likes : 0;
+function uzel_get_post_likes($postId) {
+  $likes = get_post_meta($postId, 'likes', true);
+  return $likes ? intval($likes) : 0;
+}
+function uzel_inc_post_likes($postId) {
+  if (metadata_exists('post', $postId, 'likes')) {
+    update_post_meta($postId, 'likes', uzel_get_post_likes($postId) + 1);
+  }
+  else {
+    add_post_meta($postId, 'likes', 1, true);
+  }
 }

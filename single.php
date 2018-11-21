@@ -17,6 +17,9 @@ while ( have_posts() ) : the_post();?>
   <div class="single-post-content">
     <?php the_content() ?>   
   </div>
+  <button title="Поставить лайк" class="like-button" aria-label="Поставить лайк" data-likepost=<?php echo $post->ID?>>
+    <i class="icon-heart main-color"></i>
+</button>
   <footer class="post-bottom">
     <?php uzel_social_links_markup(); ?>
     <?php uzel_tags_list();?>
@@ -24,8 +27,8 @@ while ( have_posts() ) : the_post();?>
 </article >
 <?php uzel_related_posts($post, 3); ?>
 <?php
-  if ( comments_open() || get_comments_number() ) :
-    comments_template();
+if ( comments_open() || get_comments_number() ) :
+  comments_template();
 endif;?>
 <section class="post-pagination">
 <?php previous_post_link('%link', '<i class="icon-angle-left"></i>%title'); ?>

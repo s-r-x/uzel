@@ -73,6 +73,14 @@ function uzel_add_assets() {
       'page_type' => $page_type
     ]);
   }
+  if(is_single()) {
+    wp_enqueue_script('like', $assets_dir . 'like.js', [], '1.2.3', true);
+    wp_localize_script('like', '__ajax__', [
+      'ajax_url' => admin_url('admin-ajax.php'),
+      'security' => wp_create_nonce('uzel-security'),
+      'action' => 'set_like'
+    ]);
+  }
   if(get_theme_mod('show_slider', true)) {
     wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.3', true);
   }
@@ -147,6 +155,7 @@ include get_template_directory()."/inc/init_customizer.php";
 include get_template_directory()."/inc/init_widgets.php";
 include get_template_directory()."/inc/excerpt.php";
 include get_template_directory()."/inc/ajax.php";
+include get_template_directory()."/inc/ajax_like.php";
 
 // components
 include get_template_directory()."/inc/components/social-links.php";

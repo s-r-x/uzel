@@ -19,6 +19,7 @@ module.exports = {
     'post-loader': './scripts/post-loader.js',
     preloader: './scripts/preloader.js',
     slider: './scripts/slider.js',
+    like: './scripts/like.js',
   },
   output: {
     path: OUTPUT_PATH,

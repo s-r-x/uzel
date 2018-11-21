@@ -22,11 +22,15 @@ if($excerpt != ''): ?>
   <a class="post-link button" href="<?php echo $uzel_article_link; ?>">Читать далее</a>
 </div>
 <footer>
-  <div class="post-comments-counter">
+  <div class="post-meta-counter">
+  <span class="post-meta-comments">
     <?php comments_number('0', '1', '%' );?>
     <i class="icon-comment"></i>
-    <?php echo uzel_get_post_likes($post); ?>
-<i class="icon-heart main-color"></i>
+</span>
+<span class="post-meta-likes">
+    <?php echo uzel_get_post_likes($post->ID); ?>
+    <i class="icon-heart main-color"></i>
+</span>
   </div>
   <?php uzel_social_links_markup(); ?>
 </footer>

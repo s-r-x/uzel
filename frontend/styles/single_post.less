@@ -1,3 +1,11 @@
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
 .single-post-content img {
   width: 100%;
 }
@@ -63,6 +71,39 @@ article.single-post, article.single-page {
 .related-post time {
 }
 
+// like button
+.like-button {
+  display: flex;
+  margin: 50px auto;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(0,0,0,.15);
+  box-shadow: none;
+  background: transparent;
+  font-size: 25px;
+  outline: none;
+  opacity: 1;
+  transition: border-color .3s ease-out, opacity 2.5s ease;
+  i {
+    transition: transform .3s ease-out;
+  }
+  &:hover {
+    border-color: rgba(0,0,0, .25);
+    i {
+      transform: scale(1.1);
+    }
+  }
+}
+.like-button-fetching {
+  i {
+    animation: rotation 1.5s infinite linear;
+  }
+}
 
 /* COMMENTS */
 .comments {
