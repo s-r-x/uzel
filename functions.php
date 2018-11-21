@@ -23,22 +23,6 @@ add_image_size('thumbnail-list', 400);
 add_image_size('thumbnail-grid', 730);
 add_image_size( 'thumbnail-normal', 1170);
 
-// images max size
-/*
-function uzel_post_thumbnail_sizes_attr($attr, $attachment, $size) {
-  $sizes = [
-    'thumbnail-list' => '(max-width: 991px) 100vw, 768px',
-    'slider' => '(max-width: 1440px) 100vw, 1440px',
-    'thumbnail-normal' => uzel_is_sidebar_active() ? '(max-width: 730px) 100vw, 768px' : '(max-width: 1170px) 100vw, 1170px',
-    'thumbnail-grid' => uzel_is_sidebar_active() ? '(max-width: 991px) 768px, 400px' : '(max-width: 991px) 100vw, 768px',
-  ];
-  if(array_key_exists($size, $sizes)) {
-    $attr['sizes'] = $sizes[$size];
-  }
-  return$attr;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'uzel_post_thumbnail_sizes_attr', 10 , 3 );
- */
 
 // custom comment reply link class
 function uzel_replace_reply_link_class($class) {
@@ -102,6 +86,9 @@ function uzel_add_color_styles() {
   $primary_hover = uzel_darken_color($primary, 0.1);
 ?>
 <style>
+.main-color {
+  color: <?php echo $primary; ?>;
+}
 .button, 
 .comment-respond .submit, 
 .loader,

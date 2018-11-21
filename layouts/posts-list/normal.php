@@ -25,6 +25,8 @@ if($excerpt != ''): ?>
   <div class="post-comments-counter">
     <?php comments_number('0', '1', '%' );?>
     <i class="icon-comment"></i>
+    <?php echo uzel_get_post_likes($post); ?>
+<i class="icon-heart main-color"></i>
   </div>
   <?php uzel_social_links_markup(); ?>
 </footer>

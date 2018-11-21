@@ -49,8 +49,7 @@ function uzel_tags_list() {
 endif;
 }
 
-function uzel_darken_color($hexcolor, $percent)
-{
+function uzel_darken_color($hexcolor, $percent) {
   if ( strlen( $hexcolor ) < 6 ) {
     $hexcolor = $hexcolor[0] . $hexcolor[0] . $hexcolor[1] . $hexcolor[1] . $hexcolor[2] . $hexcolor[2];
   }
@@ -63,4 +62,9 @@ function uzel_darken_color($hexcolor, $percent)
   }
 
   return '#' . implode($hexcolor);
+}
+
+function uzel_get_post_likes($post) {
+  $likes = get_post_meta($post->ID, 'likes', true);
+  return $likes ? $likes : 0;
 }
