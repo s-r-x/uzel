@@ -1,3 +1,4 @@
+// TODO:: doesn't work
 try {
   let $toggler = document.querySelector('.menu-toggle-btn'); 
   let $menu = document.querySelector('.sticky-menu');
