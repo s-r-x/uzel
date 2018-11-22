@@ -1,7 +1,3 @@
-@media (min-width: 1025px) and (max-width: 1280px) {
-}
-
-
 @media (max-width: 1024px) {
   /* slider */
   .owl-nav {
@@ -63,14 +59,13 @@
     cursor: pointer;
   }
   .sticky-menu {
+    display: none;
     width: 100%;
     height: 100vh;
     background-color: @mobile-menu-overlay-color;
-    //visibility: hidden;
     transform: translateX(-100%);
     opacity: 0;
     &.mobile-open {
-      //visibility: visible;
       transform: translateX(0);
       opacity: 1;
     }

@@ -49,12 +49,11 @@ function uzel_add_assets() {
 
   $assets_dir = get_template_directory_uri() . '/assets/';
   //styles
-  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.2.3');
+  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.2.4');
 
-  wp_enqueue_script('index_js', $assets_dir . 'index.js', '1.2.3', true);
 
   //scripts
-
+  wp_enqueue_script('index_js', $assets_dir . 'index.js', [], '1.2.4', true);
   // need to load post ajax loader script only on pages that contains posts. such as tag archive etc
   $page_type = null;
   if(is_category()) $page_type = 'category';
@@ -65,7 +64,7 @@ function uzel_add_assets() {
   elseif(is_search()) $page_type = 'search';
   if($page_type) {
     global $wp_query;
-    wp_enqueue_script('post-loader', $assets_dir . 'post-loader.js', [], '1.2.3', true);
+    wp_enqueue_script('post-loader', $assets_dir . 'post-loader.js', [], '1.2.4', true);
     wp_localize_script('post-loader', '__ajax__', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'security' => wp_create_nonce('uzel-security'),
@@ -74,7 +73,7 @@ function uzel_add_assets() {
     ]);
   }
   if(is_single()) {
-    wp_enqueue_script('like', $assets_dir . 'like.js', [], '1.2.3', true);
+    wp_enqueue_script('like', $assets_dir . 'like.js', [], '1.2.4', true);
     wp_localize_script('like', '__ajax__', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'security' => wp_create_nonce('uzel-security'),
@@ -82,7 +81,7 @@ function uzel_add_assets() {
     ]);
   }
   if(get_theme_mod('show_slider', true)) {
-    wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.3', true);
+    wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.4', true);
   }
 }
 add_action( 'wp_enqueue_scripts', 'uzel_add_assets' );

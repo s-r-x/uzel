@@ -1,12 +1,31 @@
-// TODO:: doesn't work
-try {
-  let $toggler = document.querySelector('.menu-toggle-btn'); 
-  let $menu = document.querySelector('.sticky-menu');
-  function clickHandler() {
-    $toggler.classList.toggle('is-active');
-    $menu.classList.toggle('mobile-open');
+const $toggler = $('.menu-toggle-btn'); 
+const $menu = $('.sticky-menu');
+const animTime = 400;
+
+let isAnimating = false;
+let isOpen = false;
+function clickHandler() {
+  if(isAnimating) {
+    return;
   }
-  $toggler.addEventListener('click', clickHandler);
+  isAnimating = true;
+  if(isOpen) {
+    $toggler.removeClass('is-active');
+    $menu.removeClass('mobile-open');
+    setTimeout(() => {
+      isAnimating = false;
+      $menu.css({ display: 'none' })
+      isOpen = !isOpen;
+    }, animTime);
+  }
+  else {
+    $menu.css({ display: 'block' });
+    setTimeout(() => {
+      $toggler.addClass('is-active');
+      $menu.addClass('mobile-open');
+      isAnimating = false;
+      isOpen = !isOpen;
+    }, 1);
+  }
 }
-catch(err) {
-}
+$toggler.click(clickHandler);
