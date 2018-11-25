@@ -1,6 +1,6 @@
 <?php
 get_header(); ?>
-<main class="single-post-wrapper col-sm-<?php echo uzel_get_number_of_columns();?>">
+<main class="single-post-wrapper col-md-10 col-md-offset-1">
 <?php if(have_posts()):
 while ( have_posts() ) : the_post();?>
 <article class="single-post">
