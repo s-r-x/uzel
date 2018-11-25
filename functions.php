@@ -49,7 +49,7 @@ function uzel_add_assets() {
 
   $assets_dir = get_template_directory_uri() . '/assets/';
   //styles
-  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.2.4');
+  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.3.0');
 
 
   //scripts
