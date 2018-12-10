@@ -11,7 +11,7 @@ $the_query = new WP_Query( $args );
 // The Loop
 if ( $the_query->have_posts() ) {
 ?>
-<div class="top-slider owl-carousel"> 
+<div class="top-slider owl-carousel" id="top-slider"> 
 <?php 
 while ( $the_query->have_posts() ) {
   $the_query->the_post();

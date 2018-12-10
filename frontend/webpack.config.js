@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 let cleanWebpackConfig = {
-  exclude: ['header.jpg', 'loaders'],
+  exclude: ['header.jpg', 'loaders', 'snowflake.png'],
   allowExternal: true
 };
 
@@ -20,6 +20,7 @@ module.exports = {
     preloader: './scripts/preloader.js',
     slider: './scripts/slider.js',
     like: './scripts/like.js',
+    snow: './scripts/snow.js',
   },
   output: {
     path: OUTPUT_PATH,

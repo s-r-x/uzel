@@ -19,7 +19,7 @@
     <span class="hamburger-inner"></span>
    </span>
 </button> 
-<div class="main-container">
+<div class="main-container" id="main-container">
 <div class="container-fluid">
 <?php if(has_nav_menu('primary')) :
 ?>

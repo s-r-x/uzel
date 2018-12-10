@@ -72,15 +72,28 @@ function uzel_add_assets() {
       'page_type' => $page_type
     ]);
   }
+
+  $show_slider = get_theme_mod('show_slider', true);
+
+  // is winter?
+  $current_month = (int)date('n');
+  $is_winter = $current_month > 11 || $current_month < 3;
+  if($is_winter && $show_slider && is_home()) {
+    wp_enqueue_script('snow', $assets_dir . 'snow.js', [], '1.2.4', true);
+    wp_localize_script('snow', '__snow__', [
+      'snowflake_url' => $assets_dir . 'snowflake.png'
+    ]);
+  }
   if(is_single()) {
     wp_enqueue_script('like', $assets_dir . 'like.js', [], '1.2.4', true);
     wp_localize_script('like', '__ajax__', [
       'ajax_url' => admin_url('admin-ajax.php'),
       'security' => wp_create_nonce('uzel-security'),
-      'action' => 'set_like'
+      'action' => 'set_like',
+
     ]);
   }
-  if(get_theme_mod('show_slider', true)) {
+  if($show_slider) {
     wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.4', true);
   }
 }
