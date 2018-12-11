@@ -91,6 +91,8 @@ function uzel_add_assets() {
       'action' => 'set_like',
 
     ]);
+
+    wp_enqueue_script('photo-viewer', $assets_dir . 'photo-viewer.js', [], '1.2.4', true);
   }
   if(is_home() && $show_slider) {
     wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.5', true);

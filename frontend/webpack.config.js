@@ -21,6 +21,7 @@ module.exports = {
     slider: './scripts/slider.js',
     like: './scripts/like.js',
     snow: './scripts/snow.js',
+    'photo-viewer': './scripts/photo-viewer.js',
   },
   output: {
     path: OUTPUT_PATH,
