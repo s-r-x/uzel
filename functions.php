@@ -78,7 +78,7 @@ function uzel_add_assets() {
   $current_month = (int)date('n');
   $is_winter = $current_month > 11 || $current_month < 3;
   if($is_winter && $show_slider && is_home()) {
-    wp_enqueue_script('snow', $assets_dir . 'snow.js', [], '1.2.4', true);
+    wp_enqueue_script('snow', $assets_dir . 'snow.js', [], '1.3.4', true);
     wp_localize_script('snow', '__snow__', [
       'snowflake_url' => $assets_dir . 'snowflake.png'
     ]);
@@ -92,7 +92,7 @@ function uzel_add_assets() {
 
     ]);
 
-    wp_enqueue_script('photo-viewer', $assets_dir . 'photo-viewer.js', [], '1.2.4', true);
+    wp_enqueue_script('photo-viewer', $assets_dir . 'photo-viewer.js', [], '1.3.0', true);
   }
   if(is_home() && $show_slider) {
     wp_enqueue_script('slider', $assets_dir . 'slider.js', [], '1.2.5', true);
