@@ -11,15 +11,14 @@ const mutateLinkTag = (link, img) => {
 };
 
 $.each($imgs, (_, img) => {
-  const $img = $(img);
-  const parent = $img.parent();
-  if(parent.prop('tagName').toLowerCase() === 'a') {
+  const parent = img.parentNode;
+  if(parent.nodeName.toLowerCase() === 'a') {
     mutateLinkTag(parent, img);
   }
   else {
     const link = document.createElement('a');
     mutateLinkTag(link, img);
-    $img.wrap(link);
+    $(img).wrap(link);
   }
 });
 
