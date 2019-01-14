@@ -146,7 +146,7 @@ add_action('wp_head', 'uzel_add_color_styles');
 //fonts
 function uzel_add_fonts() {
 ?>
-<link href="https://fonts.googleapis.com/css?family=Cormorant:500|Old+Standard+TT&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&amp;subset=cyrillic" rel="stylesheet">
 <?php
 }
 add_action('wp_head', 'uzel_add_fonts');

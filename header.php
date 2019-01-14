@@ -20,7 +20,7 @@
    </span>
 </button> 
 <div class="main-container" id="main-container">
-<div class="container-fluid">
+<div class="container">
 <?php if(has_nav_menu('primary')) :
 ?>
 <div class="sticky-menu">
@@ -43,3 +43,4 @@
 <?php endif; ?>
 </div>
 <div class="container">
+<div class="row">
