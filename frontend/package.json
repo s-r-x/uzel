@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "NODE_ENV=development webpack --mode=production",
-    "start": "NODE_ENV=production webpack --watch --mode=development"
+    "start": "NODE_ENV=production webpack --watch --mode=development",
+    "clean": "node ./clearAssets.js"
   },
   "keywords": [],
   "author": "",

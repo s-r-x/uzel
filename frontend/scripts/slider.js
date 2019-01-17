@@ -9,8 +9,8 @@ const config = {
   loop: true,
   nav: true,
   navText: [
-    "<i class='icon-angle-circled-left'/>",
-    "<i class='icon-angle-circled-right'/>",
+    "<i class='icon-angle-left'/>",
+    "<i class='icon-angle-right'/>",
   ],
   smartSpeed: 800,
 };
