@@ -10,6 +10,7 @@
 
 
 .slider-item {
+  color: inherit;
   position: relative;
   min-height: 500px;
   max-height: 700px;
@@ -28,10 +29,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.87);
-  border-radius: 5px;
+  padding: 29px;
+  position: relative;
   text-align: center;
+  background: white;
+  background: hsla(0,0%, 100%, .65);
+  border-radius: 5px;
 }
 .info-category a {
   font-size: @accent-text-size;
@@ -50,12 +53,11 @@
 }
 .info-title {
   margin: 5px;
-  font-size: @header-font-size;
+  font-size: 30px;
   line-height: @header-font-size - 0.2rem;
 }
 .info-date {
   font-size: @accent-text-size;
-  color: @text-secondary-color;
   margin-bottom: 20px;
 }
 

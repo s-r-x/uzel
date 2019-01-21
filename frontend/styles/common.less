@@ -1,9 +1,9 @@
 * {
-  transition: all .2s;
   box-sizing: border-box;
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 .left {
@@ -15,6 +15,10 @@ a {
   display: table;
 }
 
+button {
+  .clean-button;
+}
+
 .grid-fix .post-item_grid:nth-child(odd) {
   clear: left;
 }
@@ -22,10 +26,10 @@ a {
 /* bootstrap bug - sometimes horizontal scroll appears on mobile devices if the content is too long */
 .container {
   overflow-x: hidden;
+  max-width: 1140px;
 }
 time {
   font-size: @accent-text-size;
-  color: @text-secondary-color;
 }
 
 img {
@@ -50,3 +54,5 @@ iframe {max-width: 100%;}
   height: 100%;
   overflow: hidden;
 }
+
+

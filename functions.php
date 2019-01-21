@@ -104,7 +104,6 @@ add_action( 'wp_enqueue_scripts', 'uzel_add_assets' );
 //color styles
 function uzel_add_color_styles() {
   $primary = get_theme_mod('primary_color', '#DC8686');
-  $primary_hover = uzel_darken_color($primary, 0.1);
 ?>
 <style>
 .main-color {
@@ -116,24 +115,11 @@ function uzel_add_color_styles() {
 .bottom-footer {
   background-color: <?php echo $primary; ?>;
 }
-.button:hover, 
-.comment-respond .submit:hover {
-  background-color: <?php echo $primary_hover; ?>;
-}
-a, 
 .required,
 .search-section .query-search,
 .post-category,
-.top-header h1,
 .error-page .error-code {
   color: <?php echo $primary; ?>;
-}
-.menu-item-home a {
-  color: <?php echo $primary; ?> !important;
-}
-a:hover, 
-.menu-item-home a {
-  color: <?php echo $primary_hover; ?>;
 }
 .comment-respond input {
 outline-color: <?php echo $primary; ?>;
@@ -146,7 +132,7 @@ add_action('wp_head', 'uzel_add_color_styles');
 //fonts
 function uzel_add_fonts() {
 ?>
-<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400|Old+Standard+TT&amp;subset=cyrillic" rel="stylesheet">
 <?php
 }
 add_action('wp_head', 'uzel_add_fonts');

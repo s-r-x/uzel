@@ -3,7 +3,6 @@
   li {
     list-style-type: none;
     padding: 5px 0;
-    border-bottom: 1px dashed rgba(0,0,0,.2);
   }
 }
 .sidebar .tags {
@@ -13,7 +12,7 @@
   display: inline-block;
 }  
 .sidebar * {
-  font-size: @accent-text-size;
+  font-size: 14px;
 }
 .uzel-widget {
   text-align: left;
@@ -22,11 +21,14 @@
   padding: 0;
 }
 .sidebar h2 {
-  font-size: @small-header-size;
-  color: @text-secondary-color;
+  font-size: 27px;
+  font-family: @decor-font;
+  display: inline-block;
+  border: 2px dashed black;
+  padding: 10px;
 }
-.sidebar ul {
-  margin: 5px;
+.sidebar a {
+  opacity: 0.7;
 }
 #wp-calendar {
   th {

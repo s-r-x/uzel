@@ -14,27 +14,52 @@
 <img src="<?php echo get_template_directory_uri();?>/assets/loaders/oval.svg" alt="">
 </div>
 <script src="<?php echo get_template_directory_uri();?>/assets/preloader.js?ver=1.2.3"></script>
-<button class="hamburger hamburger--spring menu-toggle-btn" type="button">
-   <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-   </span>
-</button> 
 <div class="main-container" id="main-container">
-<div class="container">
 <?php if(has_nav_menu('primary')) :
 ?>
-<div class="sticky-menu">
-  <?php wp_nav_menu([
-    'menu' => 'primary',
-    'container' => false,
-    'items_wrap' => '<ul id="%1$s" class="%2$s">
-    %3$s</ul>',
-    'menu_class' => 'container-fluid menu-items'
+<div class="top-menu-wrap">
+<div class="container">
+<?php wp_nav_menu([
+  'menu' => 'primary',
+  'container' => false,
+  'items_wrap' => '<ul id="%1$s" class="%2$s">
+  %3$s</ul>',
+'menu_class' => 'top-menu'
   ]); ?>
 </div>
+</div>
 <?php endif;?> 
+<div class="custom-search-form">
+  <button class="cancel-search">&times</button>
+<form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+  <label for="">Искать на сайте</label>
+  <input placeholder="Что ищем?" type="text" value name="s" id="s">
+  <input type="submit" id="searchsubmit" class="button" value="Искать">
+</form>
+</div>
+<div class="top-sticky">
+  <div class="container">
+  <div class="row top-sticky--inner">
+<button class="top-search-btn" aria-hidden="открыть форму поиска">
+  <i class="icon-search-1"></i>
+</button>
+<label class="theme-toggle">
+  <input type="checkbox">
+  <span class="theme-toggle--circle"></span>
+  <i class="theme-toggle--ic icon-sun"></i>
+  <i class="theme-toggle--ic icon-moon-inv"></i>
+</label>
+    <button class="hamburger">
+      <span class="hamburger--top"></span>
+      <span class="hamburger--middle"></span>
+      <span class="hamburger--bottom"></span>
+    </button>
+  </div>
+</div>
+</div>
+<div class="container">
 <?php if(get_theme_mod('uzel_identity_header', true)):
-  get_template_part('layouts/identity_header');
+get_template_part('layouts/identity_header');
 ?>
 <?php endif;?>
 <?php if(get_theme_mod('show_slider', true) && is_front_page()):

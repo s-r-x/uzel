@@ -16,14 +16,162 @@
     border: 0;
     padding: 0;
   }
-  font-size: 14px;
   display: inline-block;
+  overflow: hidden;
   padding: 10px 20px;
   border-radius: 40px;
+  font-size: 14px;
   color: #fff;
+  transition: opacity .25s ease-in-out;
   cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 .button-small {
   font-size: @accent-text-size;
   padding: 5px 13px;
+}
+
+// ^-^ THEME TOGGLE ^-^
+@theme-toggle-width: 48px;
+@theme-toggle-height: 26px;
+@theme-toggle-padding: 2px;
+.theme-toggle {
+  margin-right: 50px;
+  position: relative;
+  display: inline-block;
+  width: @theme-toggle-width;
+  height: @theme-toggle-height;
+  &--ic {
+    position: absolute;
+    font-size: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+  }
+  .icon-sun {
+    color: #fff200;
+    left: 4px;
+  }
+  .icon-moon-inv {
+    color: #6699cc;
+    right: 4px;
+  }
+  &--circle {
+    position: absolute;
+    border-radius: 34px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    &::before {
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+      content: "";
+      height: @theme-toggle-height - @theme-toggle-padding * 2;
+      width: @theme-toggle-height - @theme-toggle-padding * 2;
+      left: @theme-toggle-padding;
+      bottom: @theme-toggle-padding;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+  }
+  input {
+    visibility: hidden;
+  }
+  input:checked + &--circle {
+    //background-color: #2196F3;
+  }
+  input:focus + &--circle {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + &--circle:before {
+    transform: translateX(100%);
+  }
+}
+
+// ^-^ TOP SEARCH ^-^
+.top-search-btn {
+  font-size: 20px;
+  margin-right: 40px;
+}
+.custom-search-form {
+  text-align: center;
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 0;
+  z-index: 101;
+  background-color: white;
+  &.is-open {
+    visibility: visible;
+    height: 100vh;
+  }
+  form {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  input[type="text"] {
+    text-align: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 72px;
+    margin-top: 22px;
+    width: 100%;
+    border-radius: 5px;
+    
+  }
+  input[type="submit"] {
+    background-color: transparent;
+    color: black;
+    font-size: 22px;
+    margin-top: 50px;
+    transition: opacity .3s ease-in-out;
+    &:hover, &:focus {
+      opacity: 0.5;
+    }
+  }
+  .cancel-search {
+    color: black;
+    margin-top: 100px;
+    font-size: 48px;
+    transition: opacity .3s ease-in-out;
+    &:hover, &:focus {
+      opacity: 0.5;
+    }
+  }
+  label {
+    font-size: 0;
+    height: 0;
+  }
+}
+
+// ^-^ brands 
+@pinterest-color: #e60023;
+@google-color: #d34836;
+@twitter-color: #38A1F3;
+@fb-color: #3C5A99;
+.icon-pinterest {
+  color: @pinterest-color;
+}
+.icon-gplus {
+  color: @google-color;
+}
+.icon-twitter {
+  color: @twitter-color;
+}
+.icon-facebook {
+  color: @fb-color;
 }
