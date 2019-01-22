@@ -71,7 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
           currentPage += 1;
           if(window.revealStuff) {
             const itemsToReveal = document.querySelectorAll('.post-item .post-thumbnail:not(.no-reveal)');
-            // wait a moment while browser changing dom
+            // scrollreveal is really bad with dynamic content
+            // so need to wait a moment while browser changing dom
             setTimeout(() => window.revealInstance.reveal(itemsToReveal, window.revealConfig), 1);
           }
           if(!more_posts) {

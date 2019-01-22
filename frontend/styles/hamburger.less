@@ -6,9 +6,14 @@
     height: 2px;
     margin-bottom: 5px;
     background-color: black;
-    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+  &:hover {
+    .hamburger--top, .hamburger--bottom {
+      opacity: 0.5;
     }
   }
   &--middle {

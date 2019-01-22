@@ -40,6 +40,12 @@ article.single-post, article.single-page {
   .tags {
     padding: 0;
     margin: 0;
+    a {
+      transition: opacity .3s ease-in-out;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
   .tags i {
     color: @text-secondary-color;
@@ -179,11 +185,8 @@ ul.children {
   width: auto;
 }
 .comment-respond .submit {
-  display: inline-block;
-  padding: 7px 22px;
-  border-radius: 17.5px;
-  color: #fff;
-  border: none;
+  .clean-button;
+  .button;
 }
 .comment-form-url {
   display: none;
@@ -203,5 +206,12 @@ ul.children {
   justify-content: space-between;
   margin: 30px 0;
 }
+.post-pagination {
+  a {
+    transition: opacity .3s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
 /* POST PAGINATION */
-

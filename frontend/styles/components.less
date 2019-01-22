@@ -43,6 +43,11 @@
   display: inline-block;
   width: @theme-toggle-width;
   height: @theme-toggle-height;
+  &:hover {
+    .theme-toggle--circle {
+      background-color: #aaa;
+    }
+  }
   &--ic {
     position: absolute;
     font-size: 13px;
@@ -69,7 +74,7 @@
     bottom: 0;
     background-color: #ccc;
     -webkit-transition: .4s;
-    transition: .4s;
+    transition: all .4s ease-in-out;
     &::before {
       border-radius: 50%;
       position: absolute;
@@ -103,6 +108,10 @@
 .top-search-btn {
   font-size: 20px;
   margin-right: 40px;
+  transition: opacity .3s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 .custom-search-form {
   text-align: center;
@@ -217,3 +226,9 @@
   color: @fb-color;
 }
 
+.social-links a {
+  transition: opacity .3s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+}
