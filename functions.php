@@ -49,11 +49,11 @@ function uzel_add_assets() {
 
   $assets_dir = get_template_directory_uri() . '/assets/';
   //styles
-  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.4.5');
+  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.4.6');
 
 
   //scripts
-  wp_enqueue_script('index_js', $assets_dir . 'index.js', [], '1.2.7', true);
+  wp_enqueue_script('index_js', $assets_dir . 'index.js', [], '1.2.8', true);
   // need to load post ajax loader script only on pages that contains posts. such as tag archive etc
   $page_type = null;
   if(is_category()) $page_type = 'category';
