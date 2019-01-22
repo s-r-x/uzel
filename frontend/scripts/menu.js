@@ -9,6 +9,7 @@ const $body = $(document.body);
 function clickHandler() {
   const isOpen = $btn.hasClass('is-active');
   const tl = new TimelineLite();
+  console.log(TimelineLite);
   if(isOpen) {
     tl.staggerTo($items, .5, {
       y: -100,

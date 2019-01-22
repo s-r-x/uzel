@@ -42,6 +42,9 @@ function clickHandler() {
         y: 0,  
         opacity: 1,
         ease: Power1.easeOut,
+        onUpdate() {
+          console.log('update');
+        },
         onComplete() {
           $input.focus();
         }
