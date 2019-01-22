@@ -8,8 +8,13 @@
   top: 0;
   z-index: 100;
   &--inner {
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding-right: 15px;
+  }
+  &--right {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -50,13 +55,13 @@
     margin-top: 25px;
     &--inner {
       padding-right: 25px;
+      padding-left: 25px;
     }
   }
 }
 @media(max-width: 575px) {
   .top-sticky {
     &--inner {
-      padding-right: 25px;
     }
   }
   .menu-item {

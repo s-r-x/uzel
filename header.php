@@ -38,6 +38,12 @@
 <div class="top-sticky">
   <div class="container">
   <div class="row top-sticky--inner">
+    <button class="hamburger">
+      <span class="hamburger--top"></span>
+      <span class="hamburger--middle"></span>
+      <span class="hamburger--bottom"></span>
+    </button>
+<div class="top-sticky--right">
 <button class="top-search-btn" aria-hidden="открыть форму поиска">
   <i class="icon-search-1"></i>
 </button>
@@ -47,11 +53,7 @@
   <i class="theme-toggle--ic icon-sun"></i>
   <i class="theme-toggle--ic icon-moon-inv"></i>
 </label>
-    <button class="hamburger">
-      <span class="hamburger--top"></span>
-      <span class="hamburger--middle"></span>
-      <span class="hamburger--bottom"></span>
-    </button>
+</div>
   </div>
 </div>
 </div>
