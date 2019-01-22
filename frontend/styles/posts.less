@@ -22,7 +22,7 @@
   padding-left: 10px;
 }
 .post-item h2 {
-  font-size: 29px;
+  font-size: 34px;
 }
 .post-category {
   font-size: @accent-text-size;
@@ -44,6 +44,9 @@
 /* START normal */
 .post-item_normal {
   margin-top: 60px;
+  &:first-child {
+    margin-top: 35px;
+  }
 }
 .post-item_normal .post-thumbnail {
   width: 100%;
@@ -65,6 +68,16 @@
 .post-item_normal .post-excerpt {
   font-size: 14px;
   line-height: 21px;
+}
+@media(max-width: 767px) {
+  .post-item_normal h2 {
+    font-size: 27px;
+  }
+}
+@media(max-width: 575px) {
+  .post-item_normal h2 {
+    font-size: 22px;  
+  }
 }
 /* END normal */
 

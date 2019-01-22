@@ -6,14 +6,40 @@
   .hamburger span {
     background-color: @dark-theme-color;
   }
-  .top-menu {
+  .top-menu,
+  .custom-search-form {
     background-color: @dark-theme-bg;
   }
+  .single-post,
   .top-search-btn,
   .top-header-description,
   .post-item,
-  .post-meta-counter
-  {
+  .post-meta-counter,
+  .sidebar,
+  .sidebar h2 {
     color: @dark-theme-color;
+  }
+  .sidebar h2, 
+  .like-button,
+  .post-item footer {
+    border-color: @dark-theme-color;
+  }
+  .custom-search-form {
+    input[type="submit"], .cancel-search, input[type="text"] {
+      color: @dark-theme-color;
+    }
+  }
+  .comments {
+    h3, form {
+      color: @dark-theme-color;
+    }
+  }
+  article.single-post, article.single-page {
+    footer {
+      border-color: @dark-theme-color;
+    }
+    .tags i {
+      color: @dark-theme-color;
+    }
   }
 }

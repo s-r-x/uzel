@@ -18,6 +18,7 @@ function closeForm() {
       opacity: 0,
       onComplete() {
         $form.removeClass('is-open');
+        $input.val('');
       }
     }, .35)
 

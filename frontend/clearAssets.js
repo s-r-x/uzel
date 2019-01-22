@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 
 const ASSETS_DIR = path.resolve(__dirname, '..', 'assets');
-const EXCLUDE = ['loaders', 'snowflake.png', 'logo.svg'];
+const EXCLUDE = ['loaders', 'snowflake.png', 'logo.svg', 'logo-circle.svg'];
 
 run();
 

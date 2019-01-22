@@ -26,8 +26,9 @@ article.single-post, article.single-page {
     justify-content: space-between;
     margin-top: 20px;
     padding: 5px 0;
-    border-bottom: 1px dashed @border-color;
-    border-top: 1px dashed @border-color;
+    border: 2px dashed black;
+    border-left: none;
+    border-right: none;
   }
   &-time {
     margin-bottom: 15px;
@@ -78,19 +79,20 @@ article.single-post, article.single-page {
 
 // like button
 .like-button {
+  .clean-button;
   display: flex;
   margin: 50px auto;
   margin-bottom: 10px;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid rgba(0,0,0,.15);
   box-shadow: none;
   background: transparent;
-  font-size: 25px;
+  font-size: 16px;
   outline: none;
   opacity: 1;
   transition: border-color .3s ease-out, opacity 2.5s ease;
@@ -115,9 +117,9 @@ article.single-post, article.single-page {
   margin-top: 60px;
 }
 .comments h3 {
-  font-size: @small-header-size;
+  font-size: 24px;
   color: @text-secondary-color;
-  text-align: center;
+  //text-align: center;
 }
 .comments .comments-counter {
   font-size: 1.5rem;
@@ -153,7 +155,7 @@ ul.children {
 
 .comment-reply-title {
   font-size: @small-header-size;
-  text-align: center;
+  text-align: left;
   color: @text-secondary-color;
 }
 .comment-notes {

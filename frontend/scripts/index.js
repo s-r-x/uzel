@@ -10,3 +10,4 @@ window.jQuery = $;
 require('./menu');
 require('./theme-toggle');
 require('./search-bar');
+require('./reveal');

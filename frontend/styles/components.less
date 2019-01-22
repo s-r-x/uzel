@@ -131,7 +131,7 @@
     margin-top: 22px;
     width: 100%;
     border-radius: 5px;
-    
+
   }
   input[type="submit"] {
     background-color: transparent;
@@ -158,6 +158,47 @@
   }
 }
 
+@media(max-width: 1199px) {
+  .custom-search-form {
+    form {
+      width: 85%;
+    }
+    input[type="text"] {
+      font-size: 64px;
+    }
+    .cancel-search {
+      margin-top: 75px;
+    }
+  }
+}
+@media(max-width: 767px) {
+  .custom-search-form {
+    input[type="text"] {
+      font-size: 48px;
+      margin-top: 10px;
+    }
+    input[type="submit"] {
+      margin-top: 25px;
+    }
+    .cancel-search {
+      margin-top: 50px;
+      font-size: 32px;
+    }
+  }
+}
+@media(max-width: 575px) {
+  .custom-search-form {
+    input[type="text"] {
+      margin-top: 20px;
+      font-size: 32px;
+      width: 95%;
+    }
+    .cancel-search {
+      margin-top: 25px;
+    }
+  }
+}
+
 // ^-^ brands 
 @pinterest-color: #e60023;
 @google-color: #d34836;
@@ -175,3 +216,4 @@
 .icon-facebook {
   color: @fb-color;
 }
+

@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+body {
+  transition: background-color .3s ease-in-out;
+}
+html {
+  &::-webkit-scrollbar-track {
+    background-color: #eee;
+  }
+  &::-webkit-scrollbar {
+    width: 20px;
+    //background-color: #F5F5F5;
+    border-radius: 45px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 45px;
+  }
+}
 a {
   color: black;
   text-decoration: none;
@@ -19,6 +35,13 @@ button {
   .clean-button;
 }
 
+// scrollreveal stuff
+.sr {
+  .post-item .post-thumbnail, 
+  article.single-post img {
+    visibility: hidden;
+  }
+}
 .grid-fix .post-item_grid:nth-child(odd) {
   clear: left;
 }

@@ -13,12 +13,11 @@
 <div class="loader">
 <img src="<?php echo get_template_directory_uri();?>/assets/loaders/oval.svg" alt="">
 </div>
-<script src="<?php echo get_template_directory_uri();?>/assets/preloader.js?ver=1.2.3"></script>
+<script src="<?php echo get_template_directory_uri();?>/assets/preloader.js?ver=1.2.7"></script>
 <div class="main-container" id="main-container">
 <?php if(has_nav_menu('primary')) :
 ?>
 <div class="top-menu-wrap">
-<div class="container">
 <?php wp_nav_menu([
   'menu' => 'primary',
   'container' => false,
@@ -26,7 +25,6 @@
   %3$s</ul>',
 'menu_class' => 'top-menu'
   ]); ?>
-</div>
 </div>
 <?php endif;?> 
 <div class="custom-search-form">

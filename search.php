@@ -1,8 +1,7 @@
 <?php get_header();?>
-<section class="search-section">
   <?php if (have_posts()) : ?>
-  <h1>Результаты поиска по запросу <span class="query-search"><?php echo get_search_query();?></h1>
   <main class="col-sm-<?php echo uzel_get_number_of_columns();?>">
+  <h1 style="text-align: center">Результаты поиска по запросу <span class="query-search"><?php echo get_search_query();?></h1>
   <div class="search-posts clearfix grid-fix">
   <?php while( have_posts()): the_post();?>
     <?php get_template_part('layouts/posts-list/' . get_theme_mod('posts-layout', 'normal'));?>
@@ -23,6 +22,5 @@
   <h1>К сожалению, по запросу <span class="query-search"><?php echo get_search_query();?></span> ничего не найдено</h1>
   </main>
   <?php endif;?>
-</section>
 <?php get_sidebar();?>
 <?php get_footer();?>

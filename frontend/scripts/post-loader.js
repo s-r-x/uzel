@@ -69,6 +69,10 @@ document.addEventListener("DOMContentLoaded", function() {
           const {content, more_posts} = res;
           $container.append(content);
           currentPage += 1;
+          if(window.revealStuff) {
+            const itemsToReveal = document.querySelectorAll('.post-item .post-thumbnail:not(.no-reveal)');
+            window.revealInstance.reveal(itemsToReveal, window.revealConfig);
+          }
           if(!more_posts) {
             isNoMorePosts = true;
           }
