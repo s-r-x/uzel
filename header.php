@@ -10,10 +10,6 @@
 <?php wp_head()?>
 </head>
 <body <?php body_class(); ?>>
-<div class="loader">
-<img src="<?php echo get_template_directory_uri();?>/assets/loaders/oval.svg" alt="">
-</div>
-<script src="<?php echo get_template_directory_uri();?>/assets/preloader.js?ver=1.2.7"></script>
 <div class="main-container" id="main-container">
 <?php if(has_nav_menu('primary')) :
 ?>
