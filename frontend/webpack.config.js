@@ -17,7 +17,6 @@ module.exports = {
     customizer: './scripts/customizer.js',
     index: "./scripts/index.js",
     'post-loader': './scripts/post-loader.js',
-    preloader: './scripts/preloader.js',
     slider: './scripts/slider.js',
     like: './scripts/like.js',
   },
