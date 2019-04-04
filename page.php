@@ -18,6 +18,7 @@ while ( have_posts() ) : the_post();?>
   </footer>
 </article >
 <?php uzel_related_posts($post, 3); ?>
+<?php get_template_part('inc/components/subscribe-form');?>
 <?php
   if ( comments_open() || get_comments_number() ) :
     comments_template();

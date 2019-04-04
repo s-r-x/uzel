@@ -15,6 +15,8 @@ function uzel_setup() {
   //thumbnails
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'post-formats',  array ('image', 'video' ) );
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'title-tag' ); 
 }
 add_action('after_setup_theme', 'uzel_setup');
 add_image_size( 'slider', 1440);
@@ -49,7 +51,7 @@ function uzel_add_assets() {
 
   $assets_dir = get_template_directory_uri() . '/assets/';
   //styles
-  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.5.0');
+  wp_enqueue_style('bundle_css', $assets_dir . 'index.css', [], '1.6.0');
 
 
   //scripts
@@ -116,7 +118,7 @@ function uzel_add_color_styles() {
 html::-webkit-scrollbar-thumb {
   background-color: <?php echo $primary; ?>;
 }
-.comment-respond input, #comment {
+.comment-respond input, #comment, #mce-EMAIL, #mc-embedded-subscribe {
 outline-color: <?php echo $primary; ?>;
 }
 </style>

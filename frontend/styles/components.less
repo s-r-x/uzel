@@ -25,7 +25,7 @@
   transition: opacity .25s ease-in-out;
   cursor: pointer;
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
 .button-small {
@@ -231,4 +231,29 @@
   &:hover {
     opacity: 0.5;
   }
+}
+
+// ^-^ SUBSCRIBE FORM ^-^
+#mc_embed_signup {
+  margin-top: 30px;
+  h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  label {
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+  }
+  input[type="email"] {
+    width: 200px;
+    padding: 5px;
+    color: inherit;
+  }
+}
+.mc-field-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
